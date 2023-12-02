@@ -46,6 +46,7 @@ public class RobotContainer {
 
     autonSelector.addOption("drive for 5 seconds", new DriveXTimeCommand(drivetrainSubsystem, 5, 0.5));
     autonSelector.addOption("drive for 2 seconds", new DriveXTimeCommand(drivetrainSubsystem, 2, 0.5));
+    autonSelector.addOption("drive forward and bakkwards", new DriveXTimeCommand(drivetrainSubsystem, 5, 0.5));
 
 
     configureBindings();
