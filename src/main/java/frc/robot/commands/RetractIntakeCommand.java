@@ -8,7 +8,7 @@ public class RetractIntakeCommand extends CommandBase{
 
     private IntakeSubsystem intakeSubsystem;
     private Timer timer = new Timer();
-    private double stopTime;
+    private double stopTime = 3;
     
     public RetractIntakeCommand(IntakeSubsystem intakeSubsystem){
 
