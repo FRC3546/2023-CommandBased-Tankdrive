@@ -17,7 +17,7 @@ public class IntakeSubsystem extends SubsystemBase{
     public IntakeSubsystem(){
 
         intakeMotor = new VictorSP(6);
-        intakeSolenoid = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 3, 4);
+        intakeSolenoid = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 6, 1);
         
     }
 
