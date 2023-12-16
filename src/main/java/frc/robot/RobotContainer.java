@@ -24,7 +24,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.DriveXTimeCommand;
 import frc.robot.commands.ExtendIntakeCommand;
+import frc.robot.commands.LoadingCommand;
 import frc.robot.commands.RetractIntakeCommand;
+import frc.robot.subsystems.LauncherSubsystem;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -40,6 +42,7 @@ public class RobotContainer {
 
   private final DrivetrainSubsystem drivetrainSubsystem = new DrivetrainSubsystem();
   private final IntakeSubsystem intakeSubsystem = new IntakeSubsystem();
+  private final LauncherSubsystem launcherSubsystem = new LauncherSubsystem();
 
   private final Joystick leftJoystick = new Joystick(1);
   private final Joystick rightJoystick = new Joystick(0);
@@ -77,6 +80,10 @@ public class RobotContainer {
     new JoystickButton(rightJoystick, 1)
       .onTrue(new ExtendIntakeCommand(intakeSubsystem))
       .onFalse(new RetractIntakeCommand(intakeSubsystem));
+
+    new JoystickButton(leftJoystick, 1)
+      .onTrue(new LoadingCommand(0.5, launcherSubsystem));
+    
     // Schedule `ExampleCommand` when `exampleCondition` changes to `true`
     // new Trigger(m_exampleSubsystem::exampleCondition)
     //     .onTrue(new ExampleCommand(m_exampleSubsystem));
